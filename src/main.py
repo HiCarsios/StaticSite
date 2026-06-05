@@ -24,9 +24,11 @@ def copy_folder(source_folder, destination_folder):
 
 		if os.path.isfile(source_path):
 			shutil.copy(source_path, destination_path)
+			print(f"Copying {source_path} to {destination_path}")
 		
-		if os.path.isdir(source_path):
+		elif os.path.isdir(source_path):
 			os.mkdir(destination_path)
+			print(f"adding file{destination_path}")
 			copy_folder(source_path, destination_path)
 
 
@@ -37,10 +39,8 @@ def copystatic():
 		os.mkdir("public")
 		copy_folder("static", "public")
 	
-
 def main():
 	copystatic()
-
 
 
 main()
