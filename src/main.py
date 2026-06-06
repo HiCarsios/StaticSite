@@ -3,6 +3,7 @@ import shutil
 from inline_markdown import *
 from htmlnode import *
 from markdown_blocks import *
+from gencontent import *
 import os
 
 def inspect_folder(folder):
@@ -41,6 +42,8 @@ def copystatic():
 	
 def main():
 	copystatic()
-
+	print("About to generate page")
+	generate_page("content/index.md", "template.html", "public/index.html")
+	print("Page generated")
 
 main()
