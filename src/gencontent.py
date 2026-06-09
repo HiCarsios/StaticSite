@@ -22,7 +22,7 @@ def generate_page(from_path, template_path, dest_path, basepath):
     templar = tp_contents.replace("{{ Content }}", HTML_code)
     templar= templar.replace("{{ Title }}", title)
     templar = templar.replace('href="/', f'href="{basepath}')
-    templar = templar.replace('src="/', f'href="{basepath}')
+    templar = templar.replace('src="/', f'src="{basepath}')
     dest_folder = os.path.dirname(dest_path)
     os.makedirs(dest_folder, exist_ok=True)
     with open(dest_path, "w") as d:
